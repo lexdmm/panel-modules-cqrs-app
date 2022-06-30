@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-WORKDIR /home/nestjs-project-api
+WORKDIR /home/panel-form-generator-api
 
 CMD npm run start:docker:dev
 
