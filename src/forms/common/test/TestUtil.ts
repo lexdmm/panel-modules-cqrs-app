@@ -1,9 +1,8 @@
-import { Forms } from '../../entities/forms.entity'
+import { Form } from '../../entities/form.entity'
 
 export default class TestUtil {
-    static getValidForm(): Forms {
-
-        const forms = new Forms()
+    static getValidForm(): Form {
+        const forms = new Form()
 
         forms.id = '1'
         forms.email = 'email_test@test.com'
@@ -17,7 +16,7 @@ export default class TestUtil {
         return forms
     }
 
-    async createForms(): Promise<Forms> {
+    async createForms(): Promise<Form> {
         return TestUtil.getValidForm()
     }
 }

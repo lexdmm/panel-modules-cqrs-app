@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common'
-import { TypeOrmModule } from '@nestjs/typeorm'
-import { Forms } from './entities/forms.entity'
-import { FormsService } from './forms.service'
+import { CqrsModule } from '@nestjs/cqrs'
+import { FormsController } from './forms.controller'
+import { GetFormQueryHandler } from './queries/get.form.handler'
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Forms])],
-    providers: [FormsService]
+    providers: [GetFormQueryHandler],
+    imports: [CqrsModule],
+    controllers: [FormsController]
 })
-export class FormsModule { }
+export class FormsModule {}
